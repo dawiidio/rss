@@ -3,6 +3,10 @@
 Small library for quick rss endpoints development. It's just a
 syntax sugar for a few standards: raw `RSS2`, `Apple podcast` and `Spotify podcast`.
 
+Below mobile view generated from builtin `html` renderer
+
+![Mobile view](https://github.com/dawiidio/rss/blob/main/static/mobile.png?raw=true)
+
 ### Installation
 
 ```shell
@@ -16,7 +20,7 @@ npm install @dawiidio/rss
 Basic example
 
 ```typescript
-import { createRssChannel, IChannelProps, createRendererForChannel, getRenderer } from '@dawiidio/rss';
+import { createRssChannel, IChannelProps, createRendererForChannel, getRenderer } from '@dawiidio/rss'; 
 
 const channel: IChannelProps = {
     title: 'My podcast',
@@ -145,6 +149,7 @@ HTML renderer is also included by default in library, there are two methods to r
 first, simple with default settings
 ```typescript
 import { HtmlRss2Renderer, createRssChannel, IChannelProps, createRendererForChannel, getRenderer } from '@dawiidio/rss';
+import css from '@dawiidio/rss/lib/styles.css'; // contains styles for default html renderer, should be added to bundle 
 
 const renderer = createRendererForChannel(
     getRenderer('html'),
@@ -183,6 +188,19 @@ console.log(renderer.renderChannelPage({
     activeItem: 0,
 })); // renders page with list of items/episodes and pagination
 ```
+
+### Default HTML renderer views
+
+Default html renderer contains below views
+
+#### Episodes list
+![Episodes list](https://github.com/dawiidio/rss/blob/main/static/list.png?raw=true)
+
+#### Single episode view
+![Episode preview](https://github.com/dawiidio/rss/blob/main/static/episode.png?raw=true)
+
+All views are responsive.
+
 
 ## Custom renderers
 You can add your own renderers by extending after `Renderer` class or `UiRenderer`.
