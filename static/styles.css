@@ -1,0 +1,335 @@
+.rss2-html-items-list, .rss2-html-episode-page {
+    font-size: 16px;
+    --channel-title-color: black;
+    --category-tag-background-color: rgb(187 187 187 / 10%);
+    --category-tag-border: 1px solid rgb(0 0 0 / 9%);
+    --category-tag-text-color: #363636;
+    --category-tag-text-size: 0.9em;
+    --channel-meta-color: rgba(0, 0, 0, 0.8);
+    --episode-bg-color: rgb(187 187 187 / 10%);
+    --pagination-link-bg-color: rgb(187 187 187 / 10%);
+    --pagination-link-visited-bg-color: rgb(187 187 187 / 15%);
+    --text-color-xl: black;
+    --text-color-m: rgb(66 66 66);
+    --font-size-xl: 2.2em;
+    --font-size-l: 1.6em;
+    --font-size-m: 1.2em;
+    --font-size-s: 1em;
+    --border-radius: 8px;
+    max-width: 1100px;
+    margin: 4em auto 0 auto;
+    box-sizing: border-box;
+    padding: 0 2em;
+}
+
+.rss2-html-header, .rss2-html-episode-page-header {
+    display: flex;
+    width: 100%;
+}
+
+.rss2-html-header-content, .rss2-html-episode-page-header-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.rss2-html-subtitle {
+    font-size: var(--font-size-m);
+    color: var(--text-color-m);
+    flex: 1;
+    line-height: 1em;
+    margin-top: -0.1em;
+    font-weight: normal;
+}
+
+.rss2-html-body-container {
+    margin-top: 2em;
+    padding-bottom: 1.2em;
+    margin-bottom: 1.2em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.rss2-html-channel-image, .rss2-html-episode-page-image {
+    width: 200px;
+    height: 200px;
+    border-radius: var(--border-radius);
+    margin-right: 3em;
+}
+
+.rss2-html-channel-title, .rss2-html-episode-page-title {
+    color: var(--channel-title-color);
+    font-size: var(--font-size-xl);
+    grid-area: title;
+    display: flex;
+    align-items: center;
+    line-height: 1.5em;
+    margin: -0.1em 0 0 0;
+}
+
+.rss2-html-description, .rss2-html-episode-page-description {
+    font-size: var(--font-size-m);
+    line-height: 1.35em;
+}
+
+.rss2-html-categories {
+    grid-area: cat;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: baseline;
+    font-size: var(--category-tag-text-size);
+}
+
+.rss2-html-categories span {
+    display: block;
+    padding: 0.3em 1em;
+    margin-right: 0.5em;
+    margin-top: 0.5em;
+    text-transform: lowercase;
+    background-color: var(--category-tag-background-color);
+    color: var(--category-tag-text-color);
+    border: var(--category-tag-border);
+    border-radius: var(--border-radius);
+}
+
+/** episode **/
+.rss2-html-episode-list-title {
+    font-size: var(--font-size-l);
+    margin-bottom: 0.5em;
+}
+
+.rss2-html-episode-list {
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+
+.rss2-html-episode-list a[href] {
+    text-decoration: none;
+    color: var(--text-color-xl);
+}
+
+.rss2-html-episode {
+    margin-top: 1em;
+    transition: border-color 130ms ease-in-out;
+    border: 1px solid rgba(0, 0, 0, 0);
+    position: relative;
+    font-size: var(--font-size-s);
+}
+
+.rss2-html-episode .rss2-html-categories {
+    margin-top: 0.5em;
+}
+
+.rss2-html-episode .rss2-html-categories span {
+    padding: 0.2em 0.5em;
+    font-size: 0.95em;
+}
+
+.rss2-html-episode:hover, .rss2-html-episode:nth-child(even):hover {
+    border-color: rgba(0, 0, 0, 0.26);
+}
+
+.rss2-html-episode:nth-child(even) {
+    background-color: var(--episode-bg-color);
+}
+
+.rss2-html-episode-link {
+    display: flex;
+    width: 100%;
+    padding: 1.5em 1.5em;
+    box-sizing: border-box;
+}
+
+.rss2-html-episode-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.rss2-html-episode-title {
+    font-size: var(--font-size-m);
+    line-height: 0.9em;
+    margin-top: 0.2em;
+}
+
+.rss2-html-episode-image {
+    width: 150px;
+    height: 150px;
+    border-radius: var(--border-radius);
+    margin-right: 2em;
+}
+
+.rss2-html-episode.rss2-html-episode-with-enclosure .rss2-html-episode-title {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.rss2-html-episode.rss2-html-episode-with-enclosure .rss2-html-episode-title:after {
+    content: "podcast";
+    padding: 0.2em 0.5em;
+    font-size: 0.7em;
+    margin-left: 0.5em;
+    font-weight: normal;
+    background-color: var(--category-tag-background-color);
+    color: var(--category-tag-text-color);
+    border: var(--category-tag-border);
+    border-radius: var(--border-radius);
+}
+
+.rss2-html-episode-meta, .rss2-html-episode-page-meta {
+    margin-top: -0.8em;
+    color: var(--text-color-m);
+    margin-bottom: 1em;
+}
+
+.rss2-html-episode-meta-item {
+    margin-right: 1em;
+    display: inline-block;
+}
+
+.rss2-html-episode-meta-item-label {
+    color: var(--text-color-m);
+    text-transform: lowercase;
+}
+
+.rss2-html-episode-meta-item-value {
+    color: var(--text-color-xl);
+}
+
+.rss2-html-episode-description {
+    font-size: var(--font-size-s);
+}
+
+.rss2-html-episode-description > *:first-child {
+    margin-top: 0;
+}
+
+.rss2-html-episode-description > *:last-child {
+    margin-bottom: 0;
+}
+
+/** pagination **/
+.rss2-html-episode-list-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    font-size: var(--font-size-m);
+    margin: 4em 0;
+    flex-wrap: wrap;
+}
+
+.rss2-html-episode-list-pagination a:visited {
+    background-color: var(--pagination-link-visited-bg-color);
+    color: var(--text-color-m);
+}
+
+.rss2-html-episode-list-pagination a {
+    padding: .5em .8em;
+    box-sizing: border-box;
+    margin: 0 0.2em;
+    background-color: var(--pagination-link-bg-color);
+    text-decoration: none;
+    color: var(--text-color-xl);
+    transition: border-color 130ms ease-in-out;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.rss2-html-episode-list-pagination a:not(.rss2-html-pagination-active-link):hover {
+    border-color: var(--text-color-m);
+}
+
+.rss2-html-episode-list-pagination a.rss2-html-pagination-active-link {
+    background-color: var(--text-color-xl);
+    color: white;
+    pointer-events: none;
+}
+
+/** copyright footer **/
+.rss2-html-copyright-footer {
+    font-size: var(--font-size-s);
+    color: var(--text-color-m);
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 1em 0 5em 0;
+}
+
+/** Episode page **/
+.rss2-html-episode-page-description {
+    margin-top: 2em;
+}
+
+.rss2-html-episode-page .rss2-html-categories {
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+.rss2-html-episode-page .rss2-html-episode-page-meta {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.rss2-html-episode-page-channel-link {
+    color: var(--text-color-m);
+    text-decoration: none;
+    line-height: 0.6em;
+    margin-top: -0.9em;
+}
+
+.rss2-html-episode-page-channel-title {
+    font-size: var(--font-size-m);
+}
+
+.rss2-html-episode-page-player {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+/** Media queries **/
+@media screen and (max-width: 950px) {
+    .rss2-html-header, .rss2-html-episode-page-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rss2-html-channel-image, .rss2-html-episode-page-image {
+        margin-bottom: 1em;
+        margin-right: 0;
+    }
+
+    .rss2-html-header-content, .rss2-html-episode-page-header-content {
+        align-items: center;
+    }
+
+    .rss2-html-episode-page .rss2-html-episode-page-meta {
+        margin-top: 1em;
+    }
+
+    .rss2-html-episode-page-player {
+        margin-top: 0.3em;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .rss2-html-episode-link {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rss2-html-episode-image {
+        margin-right: 0;
+        margin-bottom: 1.5em;
+    }
+
+    .rss2-html-episode-content {
+        align-items: center;
+    }
+
+    .rss2-html-categories {
+        align-self: start;
+    }
+
+    .rss2-html-episode-description {
+        align-self: start;
+    }
+}
