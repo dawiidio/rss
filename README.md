@@ -184,22 +184,6 @@ console.log(renderer.renderChannelPage({
 })); // renders page with list of items/episodes and pagination
 ```
 
-## Integrations
-Examples of integration with frameworks and other libs
-
-### Remix
-
-```typescript
-// src/routes/rss[.]xml.ts
-
-```
-
-And html renderer
-```typescript
-// src/routes/podcast/$slug.ts
-
-```
-
 ## Custom renderers
 You can add your own renderers by extending after `Renderer` class or `UiRenderer`.
 
